@@ -10,25 +10,48 @@ import XCTest
 @testable import XColor
 
 class XColorTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testShouldParseValidHexString() {
+        // Given
+        let hexString = "#FF2845"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertEqual(color?.red, 0xFF)
+        XCTAssertEqual(color?.green, 0x28)
+        XCTAssertEqual(color?.blue, 0x45)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testShouldParseValidHexSmallString() {
+        // Given
+        let hexString = "#FA4"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertEqual(color?.red, 0xF)
+        XCTAssertEqual(color?.green, 0xA)
+        XCTAssertEqual(color?.blue, 0x4)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testShouldNotParseInalidHexStringCharacter() {
+        // Given
+        let hexString = "#FF284J"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertNil(color)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testShouldNotParseInvalidHexPrefixString() {
+        // Given
+        let hexString = "XFF2845"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertNil(color)
     }
-
+    func testShouldNotParseInvalidHexSizeString() {
+        // Given
+        let hexString = "#FF845"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertNil(color)
+    }
 }

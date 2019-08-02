@@ -10,6 +10,10 @@
 		7641EE4E22F4493A003A16D0 /* XColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7641EE4422F4493A003A16D0 /* XColor.framework */; };
 		7641EE5322F4493A003A16D0 /* XColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5222F4493A003A16D0 /* XColorTests.swift */; };
 		7641EE5522F4493A003A16D0 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7641EE5F22F44A43003A16D0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */; };
+		7641EE6022F44A43003A16D0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */; };
+		7641EE6222F44AC6003A16D0 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
+		7641EE6322F44AC6003A16D0 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,8 @@
 		7641EE4D22F4493A003A16D0 /* XColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7641EE5222F4493A003A16D0 /* XColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XColorTests.swift; sourceTree = "<group>"; };
 		7641EE5422F4493A003A16D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		7641EE6122F44AC6003A16D0 /* XColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,8 @@
 			children = (
 				7641EE4722F4493A003A16D0 /* XColor.h */,
 				7641EE4822F4493A003A16D0 /* Info.plist */,
+				7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */,
+				7641EE6122F44AC6003A16D0 /* XColor.swift */,
 			);
 			path = XColor;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				TargetAttributes = {
 					7641EE4322F4493A003A16D0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					7641EE4C22F4493A003A16D0 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7641EE6222F44AC6003A16D0 /* XColor.swift in Sources */,
+				7641EE5F22F44A43003A16D0 /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7641EE6322F44AC6003A16D0 /* XColor.swift in Sources */,
+				7641EE6022F44A43003A16D0 /* UIColor+Hex.swift in Sources */,
 				7641EE5322F4493A003A16D0 /* XColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +354,7 @@
 		7641EE5922F4493A003A16D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaumevn.XColor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +381,7 @@
 		7641EE5A22F4493A003A16D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +407,7 @@
 		7641EE5C22F4493A003A16D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L28NS9P97;
 				INFOPLIST_FILE = XColorTests/Info.plist;
@@ -409,6 +426,7 @@
 		7641EE5D22F4493A003A16D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8L28NS9P97;
 				INFOPLIST_FILE = XColorTests/Info.plist;
