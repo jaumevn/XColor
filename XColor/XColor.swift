@@ -6,9 +6,26 @@
 //  Copyright © 2019 Jaume Viñas Navas. All rights reserved.
 //
 
+import UIKit
+
+struct Components {
+    let red: CGFloat
+    let green: CGFloat
+    let blue: CGFloat
+    let alpha: CGFloat
+    
+    init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 0xFF) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
+    }
+}
+
 class XColor {
     
     private let color: UInt32
+//    private let alpha: CGFloat
     
     init?(hexColor: String) {
         guard let str = XColor.sanitizedHexString(hexString: hexColor) else {
@@ -25,17 +42,35 @@ class XColor {
     init?(hexColor: UInt32) {
         color = hexColor
     }
+//    
+//    init?(hexColor: UInt32, alpha: CGFloat) {
+//        color = hexColor
+//    }
+//    
+//    init?(hexColor: String, alpha: CGFloat) {
+//        
+//    }
     
-    var red: UInt8 {
-        return UInt8((color & 0xFF0000) >> 16)
-    }
-    
-    var green: UInt8 {
-        return UInt8((color & 0x00FF00) >> 8)
-    }
-    
-    var blue: UInt8 {
-        return UInt8(color & 0x0000FF)
+    var components: Components? {
+        if (0x000 ... 0xFFF ~= color) {
+            let red = CGFloat((color & 0xF00) >> 8)
+            let green = CGFloat((color & 0x0F0) >> 4)
+            let blue = CGFloat(color & 0x00F)
+            return Components(red: red, green: green, blue: blue)
+        } else if (0x000000 ... 0xFFFFFF ~= color) {
+            let red = CGFloat((color & 0xFF0000) >> 16)
+            let green = CGFloat((color & 0x00FF00) >> 8)
+            let blue = CGFloat(color & 0x0000FF)
+            return Components(red: red, green: green, blue: blue)
+        } else if (0x00000000 ... 0xFFFFFFFF ~= color) {
+            let red = CGFloat((color & 0xFF000000) >> 24)
+            let green = CGFloat((color & 0x00FF0000) >> 16)
+            let blue = CGFloat((color & 0x0000FF00) >> 8)
+            let alpha = CGFloat(color & 0x000000FF)
+            return Components(red: red, green: green, blue: blue, alpha: alpha)
+        }
+        
+        return nil
     }
     
     private static func sanitizedHexString(hexString: String) -> String? {
@@ -54,6 +89,6 @@ class XColor {
     }
     
     private static func valid(_ s: String) -> Bool {
-        return s.count == 3 || s.count == 6
+        return s.count == 3 || s.count == 6 || s.count == 8
     }
 }
