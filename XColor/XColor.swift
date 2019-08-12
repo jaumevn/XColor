@@ -9,12 +9,12 @@
 import UIKit
 
 struct Components {
-    let red: CGFloat
-    let green: CGFloat
-    let blue: CGFloat
-    let alpha: CGFloat
+    let red: UInt8
+    let green: UInt8
+    let blue: UInt8
+    let alpha: Double
     
-    init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1) {
+    init(red: UInt8, green: UInt8, blue: UInt8, alpha: Double = 1) {
         self.red = red
         self.green = green
         self.blue = blue
@@ -25,62 +25,60 @@ struct Components {
 class XColor {
     
     private let color: UInt32
-    private var alpha: CGFloat = 1
+    private var alpha: Double = 1
     
     init?(hexColor: String) {
-        guard let str = XColor.sanitizedHexString(hexString: hexColor) else {
-            return nil
-        }
-        
-        guard let color = UInt32(str, radix: 16) else {
-            return nil
-        }
-        
+        guard let color = XColor.validatedColor(hexString: hexColor) else { return nil }
         self.color = color
     }
     
-    init?(hexColor: UInt32) {
-        self.color = hexColor
+    init?(hexColor: Int) {
+        self.color = UInt32(hexColor)
     }
     
-    init?(hexColor: UInt32, alpha: CGFloat) {
-        self.color = hexColor
+    init?(hexColor: Int, alpha: Double) {
+        self.color = UInt32(hexColor)
         self.alpha = alpha
     }
-    
-    init?(hexColor: String, alpha: CGFloat) {
-        guard let str = XColor.sanitizedHexString(hexString: hexColor) else {
-            return nil
-        }
-        
-        guard let color = UInt32(str, radix: 16) else {
-            return nil
-        }
 
+    init?(hexColor: String, alpha: Double) {
+        guard let color = XColor.validatedColor(hexString: hexColor) else { return nil }
         self.color = color
         self.alpha = alpha
     }
     
     var components: Components? {
         if (0x000 ... 0xFFF ~= color) {
-            let red = CGFloat((color & 0xF00) >> 8)
-            let green = CGFloat((color & 0x0F0) >> 4)
-            let blue = CGFloat(color & 0x00F)
+            let red = UInt8((color & 0xF00) >> 8)
+            let green = UInt8((color & 0x0F0) >> 4)
+            let blue = UInt8(color & 0x00F)
             return Components(red: red, green: green, blue: blue, alpha: alpha)
         } else if (0x000000 ... 0xFFFFFF ~= color) {
-            let red = CGFloat((color & 0xFF0000) >> 16)
-            let green = CGFloat((color & 0x00FF00) >> 8)
-            let blue = CGFloat(color & 0x0000FF)
+            let red = UInt8((color & 0xFF0000) >> 16)
+            let green = UInt8((color & 0x00FF00) >> 8)
+            let blue = UInt8(color & 0x0000FF)
             return Components(red: red, green: green, blue: blue, alpha: alpha)
         } else if (0x00000000 ... 0xFFFFFFFF ~= color) {
-            let red = CGFloat((color & 0xFF000000) >> 24)
-            let green = CGFloat((color & 0x00FF0000) >> 16)
-            let blue = CGFloat((color & 0x0000FF00) >> 8)
-            let alpha = CGFloat(color & 0x000000FF) / 255
+            let red = UInt8((color & 0xFF000000) >> 24)
+            let green = UInt8((color & 0x00FF0000) >> 16)
+            let blue = UInt8((color & 0x0000FF00) >> 8)
+            let alpha = Double(UInt8(color & 0x000000FF)) / 255
             return Components(red: red, green: green, blue: blue, alpha: alpha)
         }
         
         return nil
+    }
+    
+    private static func validatedColor(hexString: String) -> UInt32? {
+        guard let str = XColor.sanitizedHexString(hexString: hexString) else {
+            return nil
+        }
+        
+        guard let color = UInt32(str, radix: 16) else {
+            return nil
+        }
+        
+        return color
     }
 
     private static func sanitizedHexString(hexString: String) -> String? {

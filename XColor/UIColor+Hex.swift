@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     private convenience init?(xColor: XColor) {
         guard let components = xColor.components else { return nil }
-        self.init(red: components.red / 255, green: components.green / 255, blue: components.blue / 255, alpha: components.alpha)
+        self.init(red: CGFloat(components.red) / 255, green: CGFloat(components.green) / 255, blue: CGFloat(components.blue) / 255, alpha: CGFloat(components.alpha))
     }
     
     convenience init?(hex: String) {
@@ -19,18 +19,18 @@ extension UIColor {
         self.init(xColor: xc)
     }
     
-    convenience init?(hex: String, alpha: CGFloat) {
+    convenience init?(hex: String, alpha: Double) {
+        guard let xc = XColor(hexColor: hex, alpha: alpha) else { return nil }
+        self.init(xColor: xc)
+    }
+    
+    convenience init?(hex: Int) {
         guard let xc = XColor(hexColor: hex) else { return nil }
         self.init(xColor: xc)
     }
     
-    convenience init?(hex: UInt32) {
-        guard let xc = XColor(hexColor: hex) else { return nil }
-        self.init(xColor: xc)
-    }
-    
-    convenience init?(hex: UInt32, alpha: CGFloat) {
-        guard let xc = XColor(hexColor: hex) else { return nil }
+    convenience init?(hex: Int, alpha: Double) {
+        guard let xc = XColor(hexColor: hex, alpha: alpha) else { return nil }
         self.init(xColor: xc)
     }
     

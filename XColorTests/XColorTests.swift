@@ -11,7 +11,7 @@ import CoreGraphics
 @testable import XColor
 
 class XColorTests: XCTestCase {
-    func testShouldParseValidHexString() {
+    func testValidString() {
         // Given
         let hexString = "#FF2845"
         // When
@@ -24,7 +24,7 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.alpha, 1.0)
     }
     
-    func testShouldParseValidHexSmallString() {
+    func testValidShortString() {
         // Given
         let hexString = "#FA4"
         // When
@@ -37,7 +37,7 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.alpha, 1.0)
     }
     
-    func testShouldParseValidHexAlphaString() {
+    func testValidStringWithImplicitAlphaChannel() {
         // Given
         let hexString = "#FA455588"
         // When
@@ -50,7 +50,21 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.alpha, 0x88 / 255)
     }
     
-    func testShouldNotParseInalidHexStringCharacter() {
+    func testValidStringWithExplicitAlphaChannel() {
+        // Given
+        let hexString = "#FA4555"
+        let alpha = 0.2
+        // When
+        let color = XColor(hexColor: hexString, alpha: alpha)
+        // Expect
+        let components = color?.components
+        XCTAssertEqual(components?.red, 0xFA)
+        XCTAssertEqual(components?.green, 0x45)
+        XCTAssertEqual(components?.blue, 0x55)
+        XCTAssertEqual(components?.alpha, 0.2)
+    }
+    
+    func testInvalidHexStringCharacter() {
         // Given
         let hexString = "#FF284J"
         // When
@@ -59,7 +73,7 @@ class XColorTests: XCTestCase {
         XCTAssertNil(color)
     }
     
-    func testShouldNotParseInvalidHexPrefixString() {
+    func testInvalidPrefixString() {
         // Given
         let hexString = ".FF2845"
         // When
@@ -68,12 +82,65 @@ class XColorTests: XCTestCase {
         XCTAssertNil(color)
     }
     
-    func testShouldNotParseInvalidHexSizeString() {
+    func testInvalidStringSize() {
         // Given
         let hexString = "#FF845"
         // When
         let color = XColor(hexColor: hexString)
         // Expect
         XCTAssertNil(color)
+    }
+    
+    func testValidNumber() {
+        // Given
+        let hexNumber = 0xFF2845
+        // When
+        let color = XColor(hexColor: hexNumber)
+        // Expect
+        let components = color?.components
+        XCTAssertEqual(components?.red, 0xFF)
+        XCTAssertEqual(components?.green, 0x28)
+        XCTAssertEqual(components?.blue, 0x45)
+        XCTAssertEqual(components?.alpha, 1.0)
+    }
+    
+    func testValidShortNumber() {
+        // Given
+        let hexNumber = 0xFA4
+        // When
+        let color = XColor(hexColor: hexNumber)
+        // Expect
+        let components = color?.components
+        XCTAssertEqual(components?.red, 0xF)
+        XCTAssertEqual(components?.green, 0xA)
+        XCTAssertEqual(components?.blue, 0x4)
+        XCTAssertEqual(components?.alpha, 1.0)
+    }
+    
+    func testValidNumberWithImplicitAlphaChannel() {
+        // Given
+        let hexNumber = 0xFA455588
+        // When
+        let color = XColor(hexColor: hexNumber)
+        // Expect
+        let components = color?.components
+        XCTAssertEqual(components?.red, 0xFA)
+        XCTAssertEqual(components?.green, 0x45)
+        XCTAssertEqual(components?.blue, 0x55)
+        XCTAssertEqual(components?.alpha, 0x88 / 255)
+    }
+    
+    func testValidNumberWithExplicitAlphaChannel() {
+        // Given
+        let hexNumber = 0xFA4555
+        let alpha = 0.2
+        // When
+        let color = XColor(hexColor: hexNumber, alpha: alpha)
+        // Expect
+        let components = color?.components
+        XCTAssertEqual(components?.red, 0xFA)
+        XCTAssertEqual(components?.green, 0x45)
+        XCTAssertEqual(components?.blue, 0x55)
+        XCTAssertEqual(components?.alpha, 0.2)
     }
 }
