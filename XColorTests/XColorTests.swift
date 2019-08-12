@@ -21,7 +21,7 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xFF)
         XCTAssertEqual(components?.green, 0x28)
         XCTAssertEqual(components?.blue, 0x45)
-        XCTAssertEqual(components?.alpha, 0xFF)
+        XCTAssertEqual(components?.alpha, 1.0)
     }
     
     func testShouldParseValidHexSmallString() {
@@ -34,7 +34,7 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xF)
         XCTAssertEqual(components?.green, 0xA)
         XCTAssertEqual(components?.blue, 0x4)
-        XCTAssertEqual(components?.alpha, 0xFF)
+        XCTAssertEqual(components?.alpha, 1.0)
     }
     
     func testShouldParseValidHexAlphaString() {
@@ -47,7 +47,7 @@ class XColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xFA)
         XCTAssertEqual(components?.green, 0x45)
         XCTAssertEqual(components?.blue, 0x55)
-        XCTAssertEqual(components?.alpha, 0x88)
+        XCTAssertEqual(components?.alpha, 0x88 / 255)
     }
     
     func testShouldNotParseInalidHexStringCharacter() {
@@ -71,6 +71,15 @@ class XColorTests: XCTestCase {
     func testShouldNotParseInvalidHexSizeString() {
         // Given
         let hexString = "#FF845"
+        // When
+        let color = XColor(hexColor: hexString)
+        // Expect
+        XCTAssertNil(color)
+    }
+    
+    func testShouldNotParseNilString() {
+        // Given
+        let hexString: String
         // When
         let color = XColor(hexColor: hexString)
         // Expect

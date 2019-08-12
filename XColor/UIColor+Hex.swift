@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     private convenience init?(xColor: XColor) {
         guard let components = xColor.components else { return nil }
-        self.init(red: components.red / 255, green: components.green / 255, blue: components.blue / 255, alpha: components.alpha / 255)
+        self.init(red: components.red / 255, green: components.green / 255, blue: components.blue / 255, alpha: components.alpha)
     }
     
     convenience init?(hex: String) {
