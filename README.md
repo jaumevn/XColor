@@ -1,4 +1,5 @@
-![Travis (.com)](https://img.shields.io/travis/com/jaumevn/XColor) ![Codecov](https://img.shields.io/codecov/c/github/jaumevn/XColor)
+[![Build Status](https://travis-ci.com/jaumevn/XColor.svg?branch=master)](https://travis-ci.com/jaumevn/XColor)
+[![codecov](https://codecov.io/gh/jaumevn/XColor/branch/dev/graph/badge.svg)](https://codecov.io/gh/jaumevn/XColor)
 
 # XColor
 
@@ -6,35 +7,36 @@ XColor is a color handling extension for UIColor written in Swift.
 
 ## Examples
 
+XColor supports alpha channel with implicit and explicit convenience initializers:
+
+```swift
+// Set alpha with 8 character representation
+let colorAlphaString = UIColor("#5F7EFB50")
+
+// Set alpha channel with explicit convenience init
+let colorAlphaExplicit = UIColor("#5F7EFB", alpha: 0.5)
+```
+
+You can use multiple character representations:
+
+```swift
+// 3 character representation
+let color3CharString = UIColor("#57F")
+
+// 6 character representation
+let color6CharString = UIColor("#5F7EFB")
+
+// 8 character representation (alpha channel)
+let color8CharString = UIColor("#5F7EFB50")
+```
+
+Define your colors with hex string or number:
+
 ```swift
 // Create solid colors with hex string or hex number
-
-let colorString = UIColor(hex: "#5F7EFB")
-let colorNumber = UIColor(hex: 0xFF3033)
+let colorString = UIColor("#5F7EFB")
+let colorNumber = UIColor(0xFF3033)
 ```
-
-```swift
-// Create colors with alpha channel with implicit 8 character representation or using explicit alpha init
-
-let colorAlpha = UIColor(hex: "#5F7EFB50")
-let colorAlphaExplicit = UIColor(hex: "#5F7EFB", alpha: 0.5)
-
-```
-
-```swift
-// Support for shorthand 3 character representation, 6 character representation and 8 character representation
-
-let color3Char = UIColor(hex: "#57F")
-let color6Char = UIColor(hex: "#5F7EFB")
-let color8Char = UIColor(hex: "#5F7EFB50")
-
-```
-
-## Requirements
-
-- iOS 8.0+
-- Xcode 10.2+
-- Swift 5+
 
 ## Installation
 
@@ -51,6 +53,12 @@ pod 'XColor'
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate XColor into your Xcode project using Carthage, specify it in your Cartfile:
 
 ### Swift Package Manager
+
+## Requirements
+
+- iOS 8.0+
+- Xcode 10.2+
+- Swift 5+
 
 ## Credits
 
