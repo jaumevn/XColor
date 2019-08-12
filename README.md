@@ -44,15 +44,17 @@ let colorNumber = UIColor(0xFF3033)
 
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate XColor into your Xcode project using CocoaPods, specify it in your Podfile:
 
-```
-pod 'XColor'
+```swift
+pod "XColor"
 ```
 
 ### Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate XColor into your Xcode project using Carthage, specify it in your Cartfile:
 
-### Swift Package Manager
+```swift
+github "jaumevn/XColor" "0.1"
+```
 
 ## Requirements
 
@@ -62,8 +64,8 @@ Carthage is a decentralized dependency manager that builds your dependencies and
 
 ## Credits
 
-XColor is owned and maintained by Jaume Viñas Navas
+XColor is owned and maintained by [Jaume Viñas Navas](https://github.com/jaumevn)
 
 ## License
 
-XColor is released under the MIT license. See LICENSE for details.
+XColor is released under the MIT license. See [LICENSE](https://github.com/jaumevn/XColor/blob/master/LICENSE) for details.
