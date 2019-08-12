@@ -76,13 +76,4 @@ class XColorTests: XCTestCase {
         // Expect
         XCTAssertNil(color)
     }
-    
-    func testShouldNotParseNilString() {
-        // Given
-        let hexString: String
-        // When
-        let color = XColor(hexColor: hexString)
-        // Expect
-        XCTAssertNil(color)
-    }
 }
