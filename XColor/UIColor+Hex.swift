@@ -14,22 +14,22 @@ extension UIColor {
         self.init(red: CGFloat(components.red) / 255, green: CGFloat(components.green) / 255, blue: CGFloat(components.blue) / 255, alpha: CGFloat(components.alpha))
     }
     
-    convenience init?(_ hex: String) {
+    public convenience init?(_ hex: String) {
         guard let xc = XColor(hexColor: hex) else { return nil }
         self.init(xColor: xc)
     }
     
-    convenience init?(_ hex: String, alpha: Double) {
+    public convenience init?(_ hex: String, alpha: Double) {
         guard let xc = XColor(hexColor: hex, alpha: alpha) else { return nil }
         self.init(xColor: xc)
     }
     
-    convenience init?(_ hex: Int) {
+    public convenience init?(_ hex: Int) {
         guard let xc = XColor(hexColor: hex) else { return nil }
         self.init(xColor: xc)
     }
     
-    convenience init?(_ hex: Int, alpha: Double) {
+    public convenience init?(_ hex: Int, alpha: Double) {
         guard let xc = XColor(hexColor: hex, alpha: alpha) else { return nil }
         self.init(xColor: xc)
     }
