@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.com/jaumevn/XColor.svg?branch=master)](https://travis-ci.com/jaumevn/XColor)
 [![codecov](https://codecov.io/gh/jaumevn/XColor/branch/dev/graph/badge.svg)](https://codecov.io/gh/jaumevn/XColor)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods](https://img.shields.io/cocoapods/v/XColor)](https://github.com/jaumevn/XColor)
+[![Cocoapods platforms](https://img.shields.io/cocoapods/p/XColor)](https://github.com/jaumevn/XColor)
+[![GitHub](https://img.shields.io/github/license/jaumevn/xcolor)](https://github.com/jaumevn/XColor/blob/master/LICENSE)
 
 # XColor
 
@@ -53,7 +57,7 @@ pod "XColor"
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate XColor into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```swift
-github "jaumevn/XColor" "0.1"
+github "jaumevn/XColor"
 ```
 
 ## Requirements

@@ -2,6 +2,7 @@ language: swift
 osx_image: xcode10.2
 sudo: false
 script:
-  - xcodebuild -project XColor.xcodeproj -scheme XColor -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' clean test
+  - xcodebuild -project XColor.xcodeproj -scheme "XColor iOS" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' clean test
+  - xcodebuild -project XColor.xcodeproj -scheme "XColor tvOS" -destination 'platform=tvOS Simulator,name=Apple TV' clean test
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -J "XColor"

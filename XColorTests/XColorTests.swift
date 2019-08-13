@@ -8,7 +8,12 @@
 
 import XCTest
 import CoreGraphics
-@testable import XColor
+
+#if os(iOS)
+@testable import XColor_iOS
+#elseif os(tvOS)
+@testable import XColor_tvOS
+#endif
 
 class XColorTests: XCTestCase {
     func testValidString() {
