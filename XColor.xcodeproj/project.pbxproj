@@ -16,9 +16,7 @@
 		7641EE6322F44AC6003A16D0 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 		7673B0112301651C00D1F7B3 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0102301651C00D1F7B3 /* UIColorTests.swift */; };
 		7673B0142301678E00D1F7B3 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0132301678E00D1F7B3 /* UIColor+Helpers.swift */; };
-		7673B01E2302A27300D1F7B3 /* XColor_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7673B01C2302A27300D1F7B3 /* XColor_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7673B0302302A28400D1F7B3 /* XColor_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7673B0272302A28400D1F7B3 /* XColor_tvOS.framework */; };
-		7673B0372302A28400D1F7B3 /* XColor_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7673B0292302A28400D1F7B3 /* XColor_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7673B03E2302A31800D1F7B3 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 		7673B03F2302A31900D1F7B3 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 		7673B0402302A31A00D1F7B3 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
@@ -28,6 +26,8 @@
 		7673B0462302A38C00D1F7B3 /* XColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5222F4493A003A16D0 /* XColorTests.swift */; };
 		7673B0472302A38C00D1F7B3 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0102301651C00D1F7B3 /* UIColorTests.swift */; };
 		7673B0492302A54F00D1F7B3 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0132301678E00D1F7B3 /* UIColor+Helpers.swift */; };
+		7673B04B2302DBD100D1F7B3 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7673B04C2302DBD100D1F7B3 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +59,8 @@
 		7673B0102301651C00D1F7B3 /* UIColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		7673B0132301678E00D1F7B3 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		7673B01A2302A27300D1F7B3 /* XColor_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XColor_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7673B01C2302A27300D1F7B3 /* XColor_watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XColor_watchOS.h; sourceTree = "<group>"; };
-		7673B01D2302A27300D1F7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7673B0272302A28400D1F7B3 /* XColor_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XColor_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7673B0292302A28400D1F7B3 /* XColor_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XColor_tvOS.h; sourceTree = "<group>"; };
-		7673B02A2302A28400D1F7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7673B02F2302A28400D1F7B3 /* XColor tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XColor tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7673B0362302A28400D1F7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +107,8 @@
 		7641EE3A22F4493A003A16D0 = {
 			isa = PBXGroup;
 			children = (
-				7641EE4622F4493A003A16D0 /* Sources */,
+				7641EE4622F4493A003A16D0 /* Source */,
 				7641EE5122F4493A003A16D0 /* XColorTests */,
-				7673B01B2302A27300D1F7B3 /* XColor watchOS */,
-				7673B0282302A28400D1F7B3 /* XColor tvOS */,
-				7673B0332302A28400D1F7B3 /* XColor tvOSTests */,
 				7641EE4522F4493A003A16D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,15 +125,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7641EE4622F4493A003A16D0 /* Sources */ = {
+		7641EE4622F4493A003A16D0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7641EE4722F4493A003A16D0 /* XColor.h */,
+				7673B04A2302DBA400D1F7B3 /* Supporting Files */,
 				7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */,
 				7641EE6122F44AC6003A16D0 /* XColor.swift */,
-				7641EE4822F4493A003A16D0 /* Info.plist */,
 			);
-			path = Sources;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		7641EE5122F4493A003A16D0 /* XColorTests */ = {
@@ -163,30 +154,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		7673B01B2302A27300D1F7B3 /* XColor watchOS */ = {
+		7673B04A2302DBA400D1F7B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7673B01C2302A27300D1F7B3 /* XColor_watchOS.h */,
-				7673B01D2302A27300D1F7B3 /* Info.plist */,
+				7641EE4722F4493A003A16D0 /* XColor.h */,
+				7641EE4822F4493A003A16D0 /* Info.plist */,
 			);
-			path = "XColor watchOS";
-			sourceTree = "<group>";
-		};
-		7673B0282302A28400D1F7B3 /* XColor tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				7673B0292302A28400D1F7B3 /* XColor_tvOS.h */,
-				7673B02A2302A28400D1F7B3 /* Info.plist */,
-			);
-			path = "XColor tvOS";
-			sourceTree = "<group>";
-		};
-		7673B0332302A28400D1F7B3 /* XColor tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				7673B0362302A28400D1F7B3 /* Info.plist */,
-			);
-			path = "XColor tvOSTests";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +178,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7673B01E2302A27300D1F7B3 /* XColor_watchOS.h in Headers */,
+				7673B04B2302DBD100D1F7B3 /* XColor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +186,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7673B0372302A28400D1F7B3 /* XColor_tvOS.h in Headers */,
+				7673B04C2302DBD100D1F7B3 /* XColor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +573,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -629,7 +603,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -695,7 +669,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "XColor watchOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -724,7 +698,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "XColor watchOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,7 +726,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "XColor tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -780,7 +754,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "XColor tvOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -804,7 +778,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "XColor tvOSTests/Info.plist";
+				INFOPLIST_FILE = XColorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -825,7 +799,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "XColor tvOSTests/Info.plist";
+				INFOPLIST_FILE = XColorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
