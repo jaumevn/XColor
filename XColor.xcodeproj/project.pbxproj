@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		761753252302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
-		761753262302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
-		761753272302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
 		761753362302DFDC003340F8 /* XColor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7617532D2302DFDC003340F8 /* XColor_macOS.framework */; };
 		761753442302E015003340F8 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 		761753452302E019003340F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */; };
 		761753462302E02E003340F8 /* XColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE6122F44AC6003A16D0 /* XColor.swift */; };
 		761753472302E030003340F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5E22F44A43003A16D0 /* UIColor+Hex.swift */; };
 		761753482302E034003340F8 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		761753492302E1DF003340F8 /* XColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5222F4493A003A16D0 /* XColorTests.swift */; };
+		7617534A2302E1E1003340F8 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0102301651C00D1F7B3 /* UIColorTests.swift */; };
+		7617534B2302E317003340F8 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B0132301678E00D1F7B3 /* UIColor+Helpers.swift */; };
+		7617534D2302E52A003340F8 /* codecov.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7617534C2302E52A003340F8 /* codecov.yml */; };
+		7617534F2302E5B5003340F8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7617534E2302E5B5003340F8 /* .travis.yml */; };
 		7641EE4E22F4493A003A16D0 /* XColor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7641EE4422F4493A003A16D0 /* XColor_iOS.framework */; };
 		7641EE5322F4493A003A16D0 /* XColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5222F4493A003A16D0 /* XColorTests.swift */; };
 		7641EE5522F4493A003A16D0 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,6 +70,8 @@
 		761753242302DD16003340F8 /* XColor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XColor.podspec; sourceTree = SOURCE_ROOT; };
 		7617532D2302DFDC003340F8 /* XColor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XColor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		761753352302DFDC003340F8 /* XColor macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XColor macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7617534C2302E52A003340F8 /* codecov.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = codecov.yml; sourceTree = SOURCE_ROOT; };
+		7617534E2302E5B5003340F8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		7641EE4422F4493A003A16D0 /* XColor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XColor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7641EE4722F4493A003A16D0 /* XColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
 		7641EE4822F4493A003A16D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 		761753232302DD01003340F8 /* Deployment */ = {
 			isa = PBXGroup;
 			children = (
+				7617534E2302E5B5003340F8 /* .travis.yml */,
+				7617534C2302E52A003340F8 /* codecov.yml */,
 				761753242302DD16003340F8 /* XColor.podspec */,
 			);
 			path = Deployment;
@@ -449,6 +456,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7617534F2302E5B5003340F8 /* .travis.yml in Resources */,
+				7617534D2302E52A003340F8 /* codecov.yml in Resources */,
 				761753252302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +473,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761753262302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +480,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761753272302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +506,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761753492302E1DF003340F8 /* XColorTests.swift in Sources */,
+				7617534B2302E317003340F8 /* UIColor+Helpers.swift in Sources */,
+				7617534A2302E1E1003340F8 /* UIColorTests.swift in Sources */,
 				761753462302E02E003340F8 /* XColor.swift in Sources */,
 				761753472302E030003340F8 /* UIColor+Hex.swift in Sources */,
 			);
@@ -594,7 +604,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaumevn.XColor-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -621,7 +631,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jaumevn.XColor-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;

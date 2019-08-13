@@ -7,12 +7,16 @@
 //
 
 import XCTest
-import UIKit
 
 #if os(iOS)
+import UIKit
 @testable import XColor_iOS
 #elseif os(tvOS)
+import UIKit
 @testable import XColor_tvOS
+#elseif os(macOS)
+import Cocoa
+@testable import XColor_macOS
 #endif
 
 class UIColorTests: XCTestCase {
@@ -21,7 +25,7 @@ class UIColorTests: XCTestCase {
         let hex = "#AC34CF"
         
         // WHEN
-        let color = UIColor(hex)
+        let color = OSColor(hex)
         
         // EXPECT
         let components = color?.rgba
@@ -38,7 +42,7 @@ class UIColorTests: XCTestCase {
         let hex = "#AC34CF88"
         
         // WHEN
-        let color = UIColor(hex)
+        let color = OSColor(hex)
         
         // EXPECT
         let components = color?.rgba
@@ -56,7 +60,7 @@ class UIColorTests: XCTestCase {
         let alpha = 0.3
         
         // WHEN
-        let color = UIColor(hex, alpha: alpha)
+        let color = OSColor(hex, alpha: alpha)
         
         // EXPECT
         let components = color?.rgba
@@ -73,7 +77,7 @@ class UIColorTests: XCTestCase {
         let hex = 0xAC34CF
         
         // WHEN
-        let color = UIColor(hex)
+        let color = OSColor(hex)
         
         // EXPECT
         let components = color?.rgba
@@ -90,7 +94,7 @@ class UIColorTests: XCTestCase {
         let hex = 0xAC34CF88
         
         // WHEN
-        let color = UIColor(hex)
+        let color = OSColor(hex)
         
         // EXPECT
         let components = color?.rgba
@@ -108,7 +112,7 @@ class UIColorTests: XCTestCase {
         let alpha = 0.3
         
         // WHEN
-        let color = UIColor(hex, alpha: alpha)
+        let color = OSColor(hex, alpha: alpha)
         
         // EXPECT
         let components = color?.rgba
@@ -125,7 +129,7 @@ class UIColorTests: XCTestCase {
         let hex = ".This is an invalid string!"
         
         // WHEN
-        let color = UIColor(hex)
+        let color = OSColor(hex)
         
         // EXPECT
         XCTAssertNil(color)
