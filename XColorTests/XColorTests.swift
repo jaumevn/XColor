@@ -13,6 +13,8 @@ import CoreGraphics
 @testable import XColor_iOS
 #elseif os(tvOS)
 @testable import XColor_tvOS
+#elseif os(macOS)
+@testable import XColor_macOS
 #endif
 
 class XColorTests: XCTestCase {

@@ -6,9 +6,14 @@
 //  Copyright © 2019 Jaume Viñas Navas. All rights reserved.
 //
 
+#if os(macOS)
+import Cocoa
+#else
 import UIKit
+#endif
 
-extension UIColor {
+
+extension OSColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
         var green: CGFloat = 0

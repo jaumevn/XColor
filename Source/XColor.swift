@@ -6,8 +6,6 @@
 //  Copyright © 2019 Jaume Viñas Navas. All rights reserved.
 //
 
-import UIKit
-
 struct Components {
     let red: UInt8
     let green: UInt8
