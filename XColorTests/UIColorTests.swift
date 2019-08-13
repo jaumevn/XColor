@@ -8,7 +8,12 @@
 
 import XCTest
 import UIKit
-@testable import XColor
+
+#if os(iOS)
+@testable import XColor_iOS
+#elseif os(tvOS)
+@testable import XColor_tvOS
+#endif
 
 class UIColorTests: XCTestCase {
     func testColorWithString() {
