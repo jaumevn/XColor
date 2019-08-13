@@ -1,0 +1,5 @@
+ignore:
+  - 'XColorTests'
+  - 'XColor tvOS'
+  - 'XColor tvOSTests'
+  - 'XColor watchOS'
