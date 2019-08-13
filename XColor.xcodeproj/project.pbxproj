@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		761753252302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
+		761753262302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
+		761753272302DD16003340F8 /* XColor.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 761753242302DD16003340F8 /* XColor.podspec */; };
 		7641EE4E22F4493A003A16D0 /* XColor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7641EE4422F4493A003A16D0 /* XColor_iOS.framework */; };
 		7641EE5322F4493A003A16D0 /* XColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641EE5222F4493A003A16D0 /* XColorTests.swift */; };
 		7641EE5522F4493A003A16D0 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7641EE4722F4493A003A16D0 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		761753242302DD16003340F8 /* XColor.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XColor.podspec; sourceTree = SOURCE_ROOT; };
 		7641EE4422F4493A003A16D0 /* XColor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XColor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7641EE4722F4493A003A16D0 /* XColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
 		7641EE4822F4493A003A16D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,9 +108,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		761753232302DD01003340F8 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+				761753242302DD16003340F8 /* XColor.podspec */,
+			);
+			path = Deployment;
+			sourceTree = "<group>";
+		};
 		7641EE3A22F4493A003A16D0 = {
 			isa = PBXGroup;
 			children = (
+				761753232302DD01003340F8 /* Deployment */,
 				7641EE4622F4493A003A16D0 /* Source */,
 				7641EE5122F4493A003A16D0 /* XColorTests */,
 				7641EE4522F4493A003A16D0 /* Products */,
@@ -338,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761753252302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761753262302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761753272302DD16003340F8 /* XColor.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
