@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "XColor"
-  spec.version      = "0.2"
+  spec.version      = "0.3"
   spec.summary      = "XColor is a color handling extension for UIColor written in Swift."
   spec.homepage     = "https://github.com/jaumevn/XColor"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
