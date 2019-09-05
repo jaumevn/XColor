@@ -1,0 +1,22 @@
+name: XColor
+
+on: [pull_request]
+
+jobs:
+  tests:
+    name: Unit Tests
+    runs-on: macOS-10.14
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run unit tests [iOS]
+        run: |
+          xcodebuild test -project XColor.xcodeproj -scheme "XColor iOS" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6'
+      - name: Run unit tests [tvOS]
+        run: |
+          xcodebuild test -project XColor.xcodeproj -scheme "XColor tvOS" -destination 'platform=tvOS Simulator,name=Apple TV'
+      - name: Run unit tests [macOS]
+        run: |
+          xcodebuild test -project XColor.xcodeproj -scheme "XColor macOS" -destination 'platform=OS X,arch=x86_64'
+      - name: Upload coverage to Codecov
+        run: |
+          bash <(curl -s https://codecov.io/bash) -J "XColor" -t ${{secrets.CODECOV_TOKEN}}
