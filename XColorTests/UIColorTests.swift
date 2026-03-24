@@ -34,7 +34,7 @@ class UIColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xAC / 255 , "Red component should be 0xAC")
         XCTAssertEqual(components?.green, 0x34 / 255 , "Green component should be 0x34")
         XCTAssertEqual(components?.blue, 0xCF / 255 , "Blue component should be 0xCF")
-        XCTAssertEqual(components?.alpha, 0xFF / 255 , "Alpha component should be 0xAC")
+        XCTAssertEqual(components?.alpha, 0xFF / 255 , "Alpha component should be 0xFF")
     }
     
     func testColorWithStringAndImplicitAlphaChannel() {
@@ -69,9 +69,9 @@ class UIColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xAC / 255 , "Red component should be 0xAC")
         XCTAssertEqual(components?.green, 0x34 / 255 , "Green component should be 0x34")
         XCTAssertEqual(components?.blue, 0xCF / 255 , "Blue component should be 0xCF")
-        XCTAssertEqual(components?.alpha, 0.3 , "Alpha component should be 0x88")
+        XCTAssertEqual(components?.alpha, 0.3 , "Alpha component should be 0.3")
     }
-    
+
     func testColorWithNumber() {
         // GIVEN
         let hex = 0xAC34CF
@@ -86,7 +86,7 @@ class UIColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xAC / 255 , "Red component should be 0xAC")
         XCTAssertEqual(components?.green, 0x34 / 255 , "Green component should be 0x34")
         XCTAssertEqual(components?.blue, 0xCF / 255 , "Blue component should be 0xCF")
-        XCTAssertEqual(components?.alpha, 0xFF / 255 , "Alpha component should be 0x88")
+        XCTAssertEqual(components?.alpha, 0xFF / 255 , "Alpha component should be 0xFF")
     }
     
     func testColorWithNumberAndImplicitAlphaChannel() {
@@ -121,9 +121,9 @@ class UIColorTests: XCTestCase {
         XCTAssertEqual(components?.red, 0xAC / 255 , "Red component should be 0xAC")
         XCTAssertEqual(components?.green, 0x34 / 255 , "Green component should be 0x34")
         XCTAssertEqual(components?.blue, 0xCF / 255 , "Blue component should be 0xCF")
-        XCTAssertEqual(components?.alpha, 0.3 , "Alpha component should be 0x88")
+        XCTAssertEqual(components?.alpha, 0.3 , "Alpha component should be 0.3")
     }
-    
+
     func testColorWithInvalidString() {
         // GIVEN
         let hex = ".This is an invalid string!"
