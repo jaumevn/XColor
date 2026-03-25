@@ -9,7 +9,9 @@
 import XCTest
 import CoreGraphics
 
-#if os(iOS)
+#if SWIFT_PACKAGE
+@testable import XColor
+#elseif os(iOS)
 @testable import XColor_iOS
 #elseif os(tvOS)
 @testable import XColor_tvOS

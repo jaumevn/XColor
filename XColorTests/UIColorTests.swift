@@ -8,7 +8,10 @@
 
 import XCTest
 
-#if os(iOS)
+#if SWIFT_PACKAGE
+import Cocoa
+@testable import XColor
+#elseif os(iOS)
 import UIKit
 @testable import XColor_iOS
 #elseif os(tvOS)
