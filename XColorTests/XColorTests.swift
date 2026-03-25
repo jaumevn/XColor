@@ -9,7 +9,9 @@
 import XCTest
 import CoreGraphics
 
-#if os(iOS)
+#if SWIFT_PACKAGE
+@testable import XColor
+#elseif os(iOS)
 @testable import XColor_iOS
 #elseif os(tvOS)
 @testable import XColor_tvOS
@@ -38,9 +40,9 @@ class XColorTests: XCTestCase {
         let color = XColor(hexColor: hexString)
         // Expect
         let components = color?.components
-        XCTAssertEqual(components?.red, 0xF)
-        XCTAssertEqual(components?.green, 0xA)
-        XCTAssertEqual(components?.blue, 0x4)
+        XCTAssertEqual(components?.red, 0xFF)
+        XCTAssertEqual(components?.green, 0xAA)
+        XCTAssertEqual(components?.blue, 0x44)
         XCTAssertEqual(components?.alpha, 1.0)
     }
     
@@ -118,9 +120,9 @@ class XColorTests: XCTestCase {
         let color = XColor(hexColor: hexNumber)
         // Expect
         let components = color?.components
-        XCTAssertEqual(components?.red, 0xF)
-        XCTAssertEqual(components?.green, 0xA)
-        XCTAssertEqual(components?.blue, 0x4)
+        XCTAssertEqual(components?.red, 0xFF)
+        XCTAssertEqual(components?.green, 0xAA)
+        XCTAssertEqual(components?.blue, 0x44)
         XCTAssertEqual(components?.alpha, 1.0)
     }
     

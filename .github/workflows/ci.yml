@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test-ios:
+    name: Test iOS
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: |
+          xcodebuild \
+            -project XColor.xcodeproj \
+            -scheme "XColor iOS" \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            clean test
+
+  test-tvos:
+    name: Test tvOS
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: |
+          xcodebuild \
+            -project XColor.xcodeproj \
+            -scheme "XColor tvOS" \
+            -destination 'platform=tvOS Simulator,name=Apple TV 4K (3rd generation)' \
+            clean test
+
+  test-macos:
+    name: Test macOS
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: |
+          xcodebuild \
+            -project XColor.xcodeproj \
+            -scheme "XColor macOS" \
+            -destination 'platform=macOS,arch=arm64' \
+            clean test
+
+  test-spm:
+    name: Test SPM
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Test
+        run: swift test
