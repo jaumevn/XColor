@@ -6,13 +6,13 @@
 //  Copyright © 2019 Jaume Viñas Navas. All rights reserved.
 //
 
-#if os(macOS)
-import Cocoa
-#else
+#if canImport(AppKit)
+import AppKit
+#elseif canImport(UIKit)
 import UIKit
 #endif
 
-
+#if canImport(AppKit) || canImport(UIKit)
 extension OSColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
@@ -20,7 +20,8 @@ extension OSColor {
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
+
         return (red, green, blue, alpha)
     }
 }
+#endif

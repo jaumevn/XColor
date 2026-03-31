@@ -7,8 +7,6 @@
 //
 
 import XCTest
-import CoreGraphics
-
 #if SWIFT_PACKAGE
 @testable import XColor
 #elseif os(iOS)
