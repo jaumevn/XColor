@@ -22,7 +22,8 @@ let package = Package(
         .testTarget(
             name: "XColorTests",
             dependencies: ["XColor"],
-            path: "XColorTests"
+            path: "XColorTests",
+            exclude: ["Info.plist"]
         )
     ]
 )
